@@ -39,7 +39,7 @@ class IssueToEmailSetting < ActiveRecord::Base
                   'status_id'
                   
                   
-  attr_accessible :protocol, :host, :port, :username, :password, :use_ssl, :ssl_verify, 
+  attr_accessor :protocol, :host, :port, :username, :password, :use_ssl, :ssl_verify, 
       :delete_unprocessed, :imap_folder, :server_script, :status_id
       
   def to_s; name end

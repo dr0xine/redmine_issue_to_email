@@ -40,11 +40,11 @@ module RedmineIssueToEmail
           # delete before filter authorize and later add again so that 
           # find issue is executed before authorize
           #
-          skip_before_filter :authorize,                   :only => [:store, :bulk_store] 
-          before_filter      :find_issue_to_email,         :only => [:store]
-          before_filter      :find_issues_to_emails,       :only => [:bulk_store]
-          before_filter      :find_issue_to_email_setting, :only => [:store] 
-          before_filter      :authorize_issue_to_email,    :only => [:store, :bulk_store] 
+          skip_before_action :authorize,                   :only => [:store, :bulk_store] 
+          before_action      :find_issue_to_email,         :only => [:store]
+          before_action      :find_issues_to_emails,       :only => [:bulk_store]
+          before_action      :find_issue_to_email_setting, :only => [:store] 
+          before_action      :authorize_issue_to_email,    :only => [:store, :bulk_store] 
           
           define_method :store, instance_method(:store)
           

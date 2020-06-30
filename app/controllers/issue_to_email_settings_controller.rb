@@ -24,8 +24,8 @@ require 'net/imap'
 class IssueToEmailSettingsController < ApplicationController
   layout 'admin'
 
-  before_filter :find_project
-  before_filter :authorize
+  before_action :find_project
+  before_action :authorize
 
   # ------------------------------------------------------------------------------------ #
   def index
